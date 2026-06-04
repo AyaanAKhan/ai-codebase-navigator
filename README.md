@@ -1,5 +1,7 @@
 # CodeMind: AI Codebase Navigator
 
+![CodeMind Architecture Preview](docs/screenshots/codemind-architecture-preview.svg)
+
 CodeMind is a backend foundation for an AI codebase navigation tool. It is designed to help developers search and understand repositories using natural language, semantic indexing, and API driven code exploration.
 
 This repo is intentionally scoped around the FastAPI service layer. The goal is to show backend design, API structure, project documentation, and the planned architecture for an AI developer tool.

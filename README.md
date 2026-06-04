@@ -1,53 +1,81 @@
-# CodeMind – AI Codebase Navigator
+# CodeMind: AI Codebase Navigator
 
-CodeMind is a semantic search tool designed to help developers explore and understand large codebases more easily.
-It uses vector embeddings to power semantic search and provides a 3D dashboard for interactive navigation.
+CodeMind is a backend foundation for an AI codebase navigation tool. It is designed to help developers search and understand repositories using natural language, semantic indexing, and API driven code exploration.
 
-## Features
+This repo is intentionally scoped around the FastAPI service layer. The goal is to show backend design, API structure, project documentation, and the planned architecture for an AI developer tool.
 
-- **Semantic search**: Query your codebase using natural language or code snippets and receive context-aware results.
-- **3D React dashboard**: Visualize your project structure and explore files and dependencies in an intuitive interface built with React and Three.js.
-- **FastAPI backend**: A lightweight API server that handles search requests, indexes code, and serves results via REST endpoints.
-- **Containerized deployment**: Easily run the entire application locally or on the cloud using Docker and AWS.
+## Why This Project Matters
+
+Large repositories are hard to understand when file names, function names, and documentation do not match the way developers ask questions. CodeMind approaches that problem by turning a codebase into searchable context that can be queried through an API.
+
+## Current Features
+
+- FastAPI backend with a clean starting point for API routes
+- REST service structure for future repository indexing and search endpoints
+- Architecture plan for semantic code search using embeddings
+- Planned support for repository parsing, dependency exploration, and interactive visual navigation
+- Docker ready project direction for reproducible local and cloud deployment
+
+## Planned Architecture
+
+```text
+Developer query
+      |
+      v
+FastAPI service
+      |
+      v
+Repository parser -> chunking/indexing -> vector search
+      |
+      v
+Ranked code results + explanations
+      |
+      v
+Frontend dashboard or IDE extension
+```
 
 ## Tech Stack
 
-- Frontend: [React](https://reactjs.org/), [Three.js](https://threejs.org/)
-- Backend: [FastAPI](https://fastapi.tiangolo.com/)
-- Containerization: [Docker](https://www.docker.com/)
-- Cloud: AWS (optional)
+| Area | Tools |
+|---|---|
+| Backend | Python, FastAPI |
+| AI Search | Embeddings, vector search design |
+| Deployment | Docker, AWS ready architecture |
+| Future UI | React, Three.js |
 
-## Quick Start (Backend)
-
-This repository includes a minimal FastAPI backend to get you started.
+## Quick Start
 
 ```bash
-# Create and activate a virtual environment
 python3 -m venv venv
 source venv/bin/activate
-
-# Install dependencies
 pip install fastapi uvicorn
-
-# Run the API server
 uvicorn app.main:app --reload
-
-# Visit http://127.0.0.1:8000 to see the welcome message
 ```
 
-The frontend implementation (React + Three.js) is not included in this skeleton. You can create a separate
-`frontend/` directory for your React application and serve it as needed.
+Then open:
 
-## Folder Structure
-
+```text
+http://127.0.0.1:8000
 ```
-github_projects/ai-codebase-navigator/
-├── README.md        # Project overview and setup instructions
+
+## Repository Structure
+
+```text
+.
+├── README.md
 └── app/
-    └── main.py      # Minimal FastAPI server skeleton
+    └── main.py
 ```
 
-## Contributing
+## Recruiter Notes
 
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the search algorithms,
-extend the frontend, or add new features.
+This project demonstrates my interest in AI developer tooling, backend APIs, and scalable software architecture. The next improvements would be repository ingestion, embedding based search, tests, Docker Compose, and a deployed demo.
+
+## Future Improvements
+
+- Add repository upload and GitHub URL ingestion
+- Add AST based chunking for Python, JavaScript, TypeScript, Java, and C++
+- Store embeddings in a vector database
+- Add ranked semantic search endpoint
+- Add unit tests and GitHub Actions CI
+- Build a React dashboard for visual code exploration
